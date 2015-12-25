@@ -1,0 +1,33 @@
+<div class="giftbox">
+    <div class="cover">
+        <div></div>
+    </div>
+    <div class="box"></div>
+</div>
+
+
+<script src="snow.js"></script>
+<script src="rectangleEmitter.js"></script>
+<!--<div id="heart"></div>-->
+<script>
+    var snowfall = document.getElementById("snowfall");
+    snowfall.width = document.documentElement.clientWidth;
+    snowfall.height = document.documentElement.clientHeight;
+    var emitter = Object.create(rectangleEmitter);
+    emitter.setCanvas(snowfall);
+    emitter.setBlastZone(0, -10, snowfall.width, 1);
+    emitter.particle = snow;
+    emitter.runAhead(0);
+    emitter.start(60);
+</script>
+<style>
+
+    #snowfall{
+        display: none;
+    }
+    #text{
+        display: none;
+    }
+</style>
+<p id="text">MERRY CHRISTMAS</p>
+<canvas id="snowfall" ></canvas>
